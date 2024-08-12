@@ -10,6 +10,7 @@ public class ParseJSON {
         convertToJSON();
     }
   //  @Test
+
     public static void convertToJSON(){
         String s="<?xml version=\"1.0\"?>\n" +
                 "<catalog>\n" +
