@@ -3,13 +3,14 @@ package com.test;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
+import org.testng.annotations.Test;
 
 public class ParseJSON {
 
     public static void main(String[] args) {
+
         convertToJSON();
     }
-  //  @Test
 
     public static void convertToJSON(){
         String s="<?xml version=\"1.0\"?>\n" +
