@@ -16,13 +16,13 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.matchesPattern;
 
-public class TestApiPart8 {
+public class PostWithReqResSpecificationInBeforeClass {
 
     @BeforeClass
     public void beforeClass() {
         //created post request and response both Default specification builder in the before class
         HashMap<String, String> h1 = new HashMap<String, String>();
-        h1.put("X-Api-key", "PMAK-664f878cdb04f90001b15727-af8efcc4531b580d4fc7dcc1d00b186a01");
+        h1.put("X-Api-key", "PMAK-664f878cdb04f90001b15727-bf0f71d79548fe4d749682d8bca6988c0f");
 
         System.out.println("Printing Request Specification");
         RequestSpecBuilder reqSpecBldr = new RequestSpecBuilder()
@@ -46,7 +46,7 @@ public class TestApiPart8 {
         given().
         body("{\n" +
                 "    \"workspace\": {\n" +
-                "        \"name\":\"myFirstWorkspace\",\n" +
+                "        \"name\":\"myFirstWorkspace1122\",\n" +
                 "        \"type\":\"personal\",\n" +
                 "        \"description\":\"Rest assured created this\"\n" +
                 "    }\n" +
@@ -55,7 +55,7 @@ public class TestApiPart8 {
             post("/workspaces").
         then().
             assertThat().
-                body("workspace.name", equalTo("myFirstWorkspace"),
+                body("workspace.name", equalTo("myFirstWorkspace1122"),
                         "workspace.id", matchesPattern("^[a-z0-9-]{36}")
                 )
         ;

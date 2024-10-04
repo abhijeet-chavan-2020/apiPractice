@@ -4,7 +4,6 @@ import io.restassured.config.LogConfig;
 import io.restassured.http.Header;
 import io.restassured.http.Headers;
 import io.restassured.specification.RequestSpecification;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -13,7 +12,7 @@ import java.util.List;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.hasSize;
 
-public class TestApiPart1 {
+public class UsingHamcrestLibraryForResponseValidations {
 
     @Test
     public void test1() {

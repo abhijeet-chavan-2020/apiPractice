@@ -1,0 +1,19 @@
+NON_NULL:=>
+to exclude null values form the request body, then we use jackson annotation in the pojo at class level as following.
+@JsonInclude(JsonInclude.Include.NON_NULL).
+
+NON_DEFAULT: => Default value of an integer is 0 and of tha string is null. If we do not use this annotation then default values will be passed in the request for such data types.
+We can set such annotation on variable level as well. That means for string we can use @JsonInclude(JsonInclude.Include.NON_NULL) and for integer we can set
+@JsonInclude(JsonInclude.Include.NON_DEFAULT)
+
+NON_EMPTY: => there can se scenarios where we can pass empty values to the string or hashmap or list as well. So to ignore such data, we use NON_EMPTY annotation as follows:
+@JsonInclude(JsonInclude.Include.NON_EMPTY). This includes null value as well. Empty is kind of superset.
+
+@JsonIgnore: => There might be situations where some properties of the pojo are not used during serialization and de-serialization process. So we can mark them as ignore then those properties whon't
+considered during serialization and de-serialization.
+
+@JsonIgnoreProperties=> There might be situation where we want a property to be ignored during serialization but not to be ignored during de-serialization.
+for that we use another property - which will allowSetters during de-serialization and allowgetters during serialization.
+Example: @JsonIgnoreProperties(value="id", allowsetters= true) and then @JsonIgnore on the variable level=>  This will restrict the id to fetch during serialization process that means
+while sending the request and allow it during deserialization that means whenever we get the response and if the response has id parameter, then it will allow it to set.
+
